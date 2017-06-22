@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    android:theme="@style/MyStyle">
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/nav_group_login"
+        android:theme="@style/MyStyle" >
+
+        <item
+            android:id="@+id/nav_login"
+            android:title="@string/login_title" />
+
+        <item
+            android:id="@+id/nav_register"
+            android:title="@string/register_title" />
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/nav_group_logged_in"
+        android:theme="@style/MyStyle" >
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout_title" />
+    </group>
+
+</menu>

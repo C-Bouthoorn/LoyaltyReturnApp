@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Loyalty Return</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="login_title">Login</string>
+    <string name="logout_title">Logout</string>
+    <string name="register_title">Register</string>
+</resources>
