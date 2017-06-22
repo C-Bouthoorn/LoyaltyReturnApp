@@ -17,11 +17,19 @@ class AlertBuilder {
         }
     }
 
-    void neutralAlert(String title, String message) {
+    void errorAlert(String title, String message) {
         builder.setTitle(title)
                 .setMessage(message)
                 .setNeutralButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
+    void infoAlert(String title, String message) {
+        builder.setTitle(title)
+                .setMessage(message)
+                .setNeutralButton(android.R.string.ok, null)
+                .setIcon(android.R.drawable.ic_dialog_info)
                 .show();
     }
 

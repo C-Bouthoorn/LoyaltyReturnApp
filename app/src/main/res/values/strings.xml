@@ -26,4 +26,6 @@
     </string>
 
     <string name="base_url">http://loyalty.cbouthoorn.tk/</string>
+    <string name="user_profile">user profile</string>
+    <string name="your_username_here"><![CDATA[<Your Username Here>]]></string>
 </resources>

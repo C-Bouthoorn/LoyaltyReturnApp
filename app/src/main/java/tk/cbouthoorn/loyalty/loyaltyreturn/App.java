@@ -15,7 +15,13 @@ public class App extends Application {
     public static String LOG_TAG = "loyaltyreturn.log";
 
     // putExtra
-    public static String LOGIN_OK = "tk.cbouthoorn.loyalty.loyaltyreturn.login_ok";
+    static String root = "tk.cbouthoorn.loyalty.loyaltyreturn";
+
+    public static String LOGIN_OK = root + ".login_ok";
+    public static String LOGIN_USERNAME = root + ".login_username";
+
+    public static String PRIVATE_PREFS = "PRIVATE_PREFS";
+    public static String SESSION_ID = PRIVATE_PREFS + ".session_id";
 
 
     @Override
