@@ -18,19 +18,17 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-
 /**
- * Represents an asynchronous login/registration task used to authenticate
- * the user.
+ * Represents an asynchronous registration task
  */
-public class UserLoginTask extends AsyncTask<Void, Void, JSONObject> {
+public class UserRegisterTask extends AsyncTask<Void, Void, JSONObject> {
     @SuppressLint("StaticFieldLeak")
-    private Context loginContext;
+    private Context registerContext;
     private final String email;
     private final String password;
 
-    UserLoginTask(Context loginContext, String email, String password) {
-        this.loginContext = loginContext;
+    UserRegisterTask(Context registerContext, String email, String password) {
+        this.registerContext = registerContext;
         this.email = email;
         this.password = password;
     }
@@ -48,7 +46,7 @@ public class UserLoginTask extends AsyncTask<Void, Void, JSONObject> {
 
             JsonObjectRequest request = new JsonObjectRequest(
                     Request.Method.POST,
-                    baseURL + "/login",
+                    baseURL + "/register",
                     params,
                     future,
                     future
@@ -71,10 +69,10 @@ public class UserLoginTask extends AsyncTask<Void, Void, JSONObject> {
 
 
             if ( ok ) {
-                Log.i(App.LOG_TAG, "Logged in successfully!");
-                Intent intent = new Intent(loginContext, MainActivity.class);
+                Log.i(App.LOG_TAG, "Registered successfully!");
+                Intent intent = new Intent(registerContext, MainActivity.class);
 
-                SharedPreferences sharedPreferences = loginContext.getSharedPreferences(App.PRIVATE_PREFS, Context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = registerContext.getSharedPreferences(App.PRIVATE_PREFS, Context.MODE_PRIVATE);
 
                 // Save username
                 sharedPreferences
@@ -83,13 +81,13 @@ public class UserLoginTask extends AsyncTask<Void, Void, JSONObject> {
                         .putString(App.LOGIN_USERNAME, this.email)
                         .apply();
 
-                loginContext.startActivity(intent);
+                registerContext.startActivity(intent);
 
             } else {
                 String error = data.getJSONObject("err").getString("message");
-                Log.e(App.LOG_TAG, "Failed to log in: " + error);
+                Log.e(App.LOG_TAG, "Failed to register: " + error);
 
-                new AlertBuilder(loginContext).errorAlert("Failed to log in", error);
+                new AlertBuilder(registerContext).errorAlert("Failed to register", error);
             }
 
         } catch (JSONException e) {

@@ -28,4 +28,9 @@
     <string name="base_url">http://loyalty.cbouthoorn.tk/</string>
     <string name="user_profile">user profile</string>
     <string name="your_username_here"><![CDATA[<Your Username Here>]]></string>
+    <string name="title_activity_register">Register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_register">Register</string>
+    <string name="profile_title">Profile</string>
+    <string name="stores_title">Store</string>
 </resources>

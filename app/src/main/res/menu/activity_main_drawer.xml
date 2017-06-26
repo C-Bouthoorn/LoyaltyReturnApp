@@ -22,9 +22,24 @@
         android:checkableBehavior="single"
         android:id="@+id/nav_group_logged_in"
         android:theme="@style/MyStyle" >
+
         <item
             android:id="@+id/nav_logout"
             android:title="@string/logout_title" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/profile_title" />
+
+        <item
+            android:id="@+id/nav_stores"
+            android:title="@string/stores_title" />
+
+        <item
+            android:title="Statistics" />
+
+        <item
+            android:title="Settings" />
     </group>
 
 </menu>
